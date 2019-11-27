@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "8e784986-eed9-4839-89d2-f4cada14f11e",
+		"name": "teacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b60d9c32-1865-40be-aac9-80f2ee9e502c",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"增加成功！\"] = jsonData.message ===\"增加成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"degree\": {\r\n            \"id\": 6,\r\n            \"remarks\": \" \"\r\n        },\r\n        \"department\": {\r\n\r\n            \"id\": 6,\r\n            \"school\": {\r\n                \"id\": 9,\r\n                \"no\": \"2\"\r\n            }\r\n        },\r\n        \"id\": 5,\r\n        \"name\": \"王红\",\r\n        \"title\": {\r\n            \"id\": 3,\r\n            \"remarks\": \" \"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/teacher.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f42022f3-fe47-479e-9806-c9d4e6a0c985",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"删除成功！\"] = jsonData.message ===\"删除成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teacher.ctl?id=9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fa1cc00c-aa4d-41a5-a22e-c3505d9c1845",
+						"exec": [
+							"tests[\"Body matches string 王红\"] = responseBody.has(\"王红\");",
+							"tests[\"Body matches string 王刚\"] = responseBody.has(\"王刚\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teacher.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/teacher.ctl Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "569e5e5e-8fe7-4acc-b4dc-86edb65010d6",
+						"exec": [
+							"tests[\"id = 1 的教师字串\"] = responseBody.has(\"王红\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teacher.ctl?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64d8c82a-6b99-44b3-8d7f-7c330b3c93de",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"] = jsonData.message ===\"修改成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"degree\": {\r\n            \"id\": 6,\r\n            \"remarks\": \" \"\r\n        },\r\n        \"department\": {\r\n\r\n            \"id\": 6,\r\n            \"school\": {\r\n                \"id\": 9,\r\n                \"no\": \"2\"\r\n            }\r\n        },\r\n        \"id\": 4,\r\n        \"name\": \"王刚\",\r\n        \"title\": {\r\n            \"id\": 3,\r\n            \"remarks\": \" \"\r\n        }\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/teacher.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

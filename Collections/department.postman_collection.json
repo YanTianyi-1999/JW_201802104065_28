@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "5663766a-1b1b-43aa-8690-b00a0a4a5363",
+		"name": "department",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8597594f-ae9b-44f4-b4ad-dcc68799c5ab",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"增加成功！\"] = jsonData.message ===\"增加成功\"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"description\": \"最牛的专业\",\r\n        \"no\": \"09\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 10,\r\n            \"no\": \"02\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5620e4be-0dc0-4601-ba63-823b674eea68",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"删除成功！\"] = jsonData.message ===\"删除成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/department.ctl?id=14",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fec53eec-1b31-4922-bdfb-cb56e2f43108",
+						"exec": [
+							"tests[\"Body matches string 信管\"] = responseBody.has(\"信管\");",
+							"tests[\"Body matches string 最有前途的专业\"] = responseBody.has(\"最有前途的专业\");",
+							"tests[\"Body matches string 最牛的专业\"] = responseBody.has(\"最牛的专业\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/department.ctl?paraType=school&id=7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "paraType",
+							"value": "school"
+						},
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/department.ctl Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fec53eec-1b31-4922-bdfb-cb56e2f43108",
+						"exec": [
+							"tests[\"Body matches string 信管\"] = responseBody.has(\"信管\");",
+							"tests[\"Body matches string 最有前途的专业\"] = responseBody.has(\"最有前途的专业\");",
+							"tests[\"Body matches string 最牛的专业\"] = responseBody.has(\"最牛的专业\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/department.ctl?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/department.ctl Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ce8ffee-0cd1-495a-94a8-5be78dde1352",
+						"exec": [
+							"tests[\"Body matches string 最有前途的专业\"] = responseBody.has(\"最有前途的专业\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/department.ctl?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3ba902b4-e177-4ce3-b99f-59776aaac1d6",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"] = jsonData.message ===\"修改成功\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"description\": \"最有前途的专业\",\r\n        \"id\": 1,\r\n        \"no\": \"05\",\r\n        \"school\": {\r\n            \"description\": \"管理学院\",\r\n            \"id\": 7,\r\n            \"no\": \"02\"\r\n        }\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/department.ctl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
